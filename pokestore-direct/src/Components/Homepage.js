@@ -6,7 +6,7 @@ function Homepage() {
 
     <div className="navbar">
     <a>Homepage</a>
-    <a>Products</a>
+    <a href="/products">Products</a>
     <a>Basket</a>
     </div>
 

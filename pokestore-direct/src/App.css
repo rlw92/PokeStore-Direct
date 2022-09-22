@@ -5,7 +5,7 @@
 }
 
 .Homepage{display:flex;flex-direction: column;}
-.Header h1{text-align:center; font-family:Lato;color:red;margin-top:60px;}
+.Header h1{text-align:center; font-family:Lato;color:red; font-size:50px;margin-top:60px;}
 
 /* The navigation bar */
 .navbar {
@@ -36,3 +36,19 @@
 .main {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
+
+
+.maincontent{display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:10px;
+    padding:10px;
+
+
+  }
+
+  .maincontent div{
+    background-color:silver;
+    width:20vw;
+    text-align:center;
+
+    }
