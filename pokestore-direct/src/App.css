@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url(./PocketMonk.ttf) format('opentype');
+}
+
+.Homepage{display:flex;flex-direction: column;}
+.Header h1{text-align:center; font-family:Lato;color:red;margin-top:60px;}
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: yellow;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
