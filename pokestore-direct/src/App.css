@@ -6,6 +6,31 @@
 
 .Homepage{display:flex;flex-direction: column;}
 .Header h1{text-align:center; font-family:Lato;color:red; font-size:50px;margin-top:60px;}
+.About{font-size:20px;
+       color:red;
+      margin:20px;}
+
+  .martImage{margin-left:25%;width:30%;}
+
+.load{width:100%;
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+    .load:hover{width:100%;
+      background-color: #4CAF50; /* Green */
+        border: solid blue 2px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;}
 
 /* The navigation bar */
 .navbar {
@@ -40,15 +65,27 @@
 
 .maincontent{display:grid;
     grid-template-columns:1fr 1fr 1fr;
-    gap:10px;
+    gap:30px;
     padding:10px;
+
 
 
   }
 
   .maincontent div{
-    background-color:silver;
+    background-color:gold;
     width:20vw;
     text-align:center;
 
     }
+
+  .maincontent div:hover{
+    border:solid silver 2px;
+    width:20vw;
+    text-align:center;
+  }
+
+  .centerbox{display:flex; justify-content:center;margin:0;}
+
+  .name{font-family:Lato;}
+  .text{font-size:16px;}

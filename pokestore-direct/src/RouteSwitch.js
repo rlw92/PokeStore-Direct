@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Homepage from "./Components/Homepage";
-import Products from './Components/Products'
+import ProductsClass from './Components/ProductsClass'
 
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<ProductsClass />} />
+
 
       </Routes>
     </BrowserRouter>
