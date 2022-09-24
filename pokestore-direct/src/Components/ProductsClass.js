@@ -10,7 +10,8 @@ class ProductsClass extends Component {
       pokemons : [],
       pokemonDetails : [],
       offset: 0,
-      loadNumber: 12
+      loadNumber:12
+
     }
 
     this.handleMoreClick = this.handleMoreClick.bind(this);
