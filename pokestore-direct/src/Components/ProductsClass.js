@@ -2,6 +2,7 @@ import React from 'react';
 import {Component} from 'react';
 import "../App.css"
 import PokeCard from './PokeCard'
+import Basket from './Basket'
 
 class ProductsClass extends Component {
   constructor() {
@@ -10,11 +11,23 @@ class ProductsClass extends Component {
       pokemons : [],
       pokemonDetails : [],
       offset: 0,
-      loadNumber:12
+      loadNumber:12,
+      shwBskt:false
 
     }
 
     this.handleMoreClick = this.handleMoreClick.bind(this);
+    this.showBasket=this.showBasket.bind(this);
+    this.hideBasket=this.hideBasket.bind(this)
+
+  }
+
+  showBasket(){
+    this.setState({shwBskt:true})
+  }
+
+  hideBasket(){
+    this.setState({shwBskt:false})
   }
 
 
@@ -74,8 +87,10 @@ class ProductsClass extends Component {
       <div className="navbar">
       <a href="/">Homepage</a>
       <a href="/products">Products</a>
-      <a>Basket</a>
+      <a onClick={this.showBasket}>Basket</a>
       </div>
+
+    {this.state.shwBskt &&  <Basket func={this.hideBasket}/>}
 
       <div className="Header">
       <h1>Products</h1>

@@ -1,19 +1,25 @@
-import './App.css';
+import '../App.css';
 
-{name:"Great-ball",
- price:"100",
- quantity:
-}
 
-function App() {
+
+function Basket( { func }) {
   return (
 
     <div>
 
+    <div className="modal">
+
+        <div className="modal-content">
+        <span className="close" onClick={func}>&times;</span>
+        <h2>Basket</h2>
+        <p>This is where the items will be listed.</p>
+      </div>
+
+    </div>
 
 
     </div>
   );
 }
 
-export default App;
+export default Basket;
