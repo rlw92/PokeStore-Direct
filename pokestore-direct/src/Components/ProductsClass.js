@@ -12,18 +12,46 @@ class ProductsClass extends Component {
       pokemonDetails : [],
       offset: 0,
       loadNumber:12,
-      shwBskt:false
+      shwBskt:false,
+      itemName:"",
+      price:"",
+      basket:[
+        {
+          itemName:"Hat",
+          price:"70"
+        },
+        {
+          itemName:"Shoes",
+          price:"60"
+        }
+      ]
 
     }
 
     this.handleMoreClick = this.handleMoreClick.bind(this);
     this.showBasket=this.showBasket.bind(this);
     this.hideBasket=this.hideBasket.bind(this)
+    this.addToBskt=this.addToBskt.bind(this)
+
+  }
+
+  addToBskt(name,price){
+    const newList = this.state.basket.concat({
+      itemName:name,
+      price:price
+
+        })
+    this.setState({
+      basket:newList,
+      itemName:"",
+      price:""
+    })
 
   }
 
   showBasket(){
     this.setState({shwBskt:true})
+    console.log(this.state.basket)
   }
 
   hideBasket(){
@@ -77,7 +105,7 @@ class ProductsClass extends Component {
     const {pokemonDetails} = this.state;
 
     const renderedPokemonList = pokemonDetails.map((pokemon, index) => {
-      return (<PokeCard pokemon={pokemon} />);
+      return (<PokeCard pokemon={pokemon} func={this.addToBskt}/>);
     });
 
     return (
@@ -90,7 +118,7 @@ class ProductsClass extends Component {
       <a onClick={this.showBasket}>Basket</a>
       </div>
 
-    {this.state.shwBskt &&  <Basket func={this.hideBasket}/>}
+    {this.state.shwBskt &&  <Basket basket={this.state.basket} func={this.hideBasket}/>}
 
       <div className="Header">
       <h1>Products</h1>
@@ -109,6 +137,8 @@ class ProductsClass extends Component {
       </div>
 
 <button type="button" className="load" onClick={this.handleMoreClick}>Load More</button>
+{/*Below button is just test*/}
+<button onClick={()=>{this.addToBskt("Ultraball","£600")}}>Add Items</button>
       </div>
     );
   }

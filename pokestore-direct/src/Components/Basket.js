@@ -2,7 +2,7 @@ import '../App.css';
 
 
 
-function Basket( { func }) {
+function Basket( { func, basket }) {
   return (
 
     <div>
@@ -12,7 +12,16 @@ function Basket( { func }) {
         <div className="modal-content">
         <span className="close" onClick={func}>&times;</span>
         <h2>Basket</h2>
-        <p>This is where the items will be listed.</p>
+        <div>
+        <ul>
+        {basket.map((items) => (
+
+        <li>  <p><strong>Name</strong>:&nbsp;<span>{items.itemName}</span>{' '}<strong>Price</strong>:&nbsp;<span>${items.price}</span></p> </li>
+
+        ))}
+
+        </ul>
+</div>
       </div>
 
     </div>

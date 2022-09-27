@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 
-const PokeCard = ({pokemon}) => {
+const PokeCard = ({pokemon,func}) => {
     return (
 
 
@@ -10,7 +10,7 @@ const PokeCard = ({pokemon}) => {
        <h2>${pokemon.cost}</h2>
        <h2><img src={pokemon.sprites.default}></img></h2>
        <h2 className="text">{pokemon["flavor_text_entries"][0].text}</h2>
-       <button>Add to Basket</button>
+       <button onClick={()=>{func(pokemon.name,pokemon.cost)}}>Add to Basket</button>
   </div>
 
 
