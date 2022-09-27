@@ -1,8 +1,23 @@
 import '../App.css';
+import {useState, useEffect} from "react";
 
 
 
 function Basket( { func, basket }) {
+  const[total,setTotal]=useState("")
+
+
+  let sum = basket.reduce(function(prev, current) {
+  return prev + +current.price
+}, 0);
+
+useEffect(()=>{
+  setTotal(sum)
+
+  }
+)
+
+
   return (
 
     <div>
@@ -22,6 +37,7 @@ function Basket( { func, basket }) {
 
         </ul>
 </div>
+<p><strong>Total</strong>:&nbsp;${total}</p>
       </div>
 
     </div>

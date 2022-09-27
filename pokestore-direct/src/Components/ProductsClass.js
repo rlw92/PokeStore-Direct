@@ -49,6 +49,8 @@ class ProductsClass extends Component {
 
   }
 
+
+
   showBasket(){
     this.setState({shwBskt:true})
     console.log(this.state.basket)
@@ -115,7 +117,7 @@ class ProductsClass extends Component {
       <div className="navbar">
       <a href="/">Homepage</a>
       <a href="/products">Products</a>
-      <a onClick={this.showBasket}>Basket</a>
+      <a onClick={this.showBasket}>Basket({this.state.basket.length})</a>
       </div>
 
     {this.state.shwBskt &&  <Basket basket={this.state.basket} func={this.hideBasket}/>}
@@ -137,8 +139,7 @@ class ProductsClass extends Component {
       </div>
 
 <button type="button" className="load" onClick={this.handleMoreClick}>Load More</button>
-{/*Below button is just test*/}
-<button onClick={()=>{this.addToBskt("Ultraball","£600")}}>Add Items</button>
+
       </div>
     );
   }
