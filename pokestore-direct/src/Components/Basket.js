@@ -45,11 +45,14 @@ setTotal(sum)
         <strong>Name</strong>:&nbsp;<span>{items.itemName}</span>{' '}
         <strong>Price</strong>:&nbsp;<span>${items.price}</span>{' '}
         <label for="quantity">
-        <strong>Quantity </strong>:</label>
+        <strong>Quantity </strong>:{" "}</label>
         <button onClick={()=>dec(items.itemName,items.quantity)}>-</button>
-        {items.quantity}
+        {" "}{items.quantity}{" "}
         <button onClick={()=>inc(items.itemName,items.quantity)}>+</button>
-        {items.accTot}
+        {' '}${items.accTot}
+        {' '}
+     <button>Remove</button>
+
 
         </p>
         </li>

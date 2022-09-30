@@ -62,6 +62,18 @@ class ProductsClass extends Component {
   }
 
   addToBskt(name,price){
+
+    if (this.state.basket.filter(e => e.itemName === name).length > 0) {
+      let obj = this.state.basket.find(o => o.itemName === name);
+      ++obj.quantity
+
+      console.log("In basket already")
+
+}
+
+else{
+
+
     const newList = this.state.basket.concat({
       itemName:name,
       price:price,
@@ -73,6 +85,8 @@ class ProductsClass extends Component {
       itemName:"",
       price:""
     })
+
+  }
 
   }
 
