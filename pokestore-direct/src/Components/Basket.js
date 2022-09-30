@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 
 
 
-function Basket( { func, basket, inc, dec }) {
+function Basket( { func, basket, inc, dec, rmv }) {
   const[total,setTotal]=useState("")
   const[accTot,setAcc]=useState([])
   const[update,setUpdate]=useState("")
@@ -51,7 +51,7 @@ setTotal(sum)
         <button onClick={()=>inc(items.itemName,items.quantity)}>+</button>
         {' '}${items.accTot}
         {' '}
-     <button>Remove</button>
+     <button onClick={()=> rmv(items.itemName)}>Remove</button>
 
 
         </p>

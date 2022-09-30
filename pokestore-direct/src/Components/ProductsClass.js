@@ -37,13 +37,14 @@ class ProductsClass extends Component {
     this.addToBskt=this.addToBskt.bind(this)
     this.increment=this.increment.bind(this)
     this.decrement=this.decrement.bind(this)
+    this.rmvFrmBskt=this.rmvFrmBskt.bind(this)
 
 
   }
 
-  accum(a,b){
-    return a*b
-  }
+  rmvFrmBskt(name){
+    this.state.basket = this.state.basket.filter(person => person.itemName != name)
+    this.setState({update:true})}
 
   increment(name,items){
     let obj = this.state.basket.find(o => o.itemName === name);
@@ -161,7 +162,12 @@ else{
       <a onClick={this.showBasket}>Basket({this.state.basket.length})</a>
       </div>
 
-    {this.state.shwBskt &&  <Basket basket={this.state.basket} func={this.hideBasket} inc={this.increment} dec={this.decrement}/>}
+    {this.state.shwBskt &&  <Basket
+      basket={this.state.basket}
+      func={this.hideBasket}
+      inc={this.increment}
+      dec={this.decrement}
+      rmv={this.rmvFrmBskt}/>}
 
       <div className="Header">
       <h1>Products</h1>
