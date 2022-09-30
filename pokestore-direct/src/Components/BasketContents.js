@@ -3,28 +3,10 @@ import {useState, useEffect} from "react";
 
 
 
-function Basket( { func, basket, inc }) {
+function BasketContents( { func, basket, inc }) {
   const[total,setTotal]=useState("")
   const[accTot,setAcc]=useState([])
   const[update,setUpdate]=useState("")
-
-
-
-useEffect(()=>{
-
-  basket.forEach((element) => {
-element.accTot = element.quantity*element.price
-})
-
-let sum = basket.reduce(function(prev, current) {
-return prev + +current.accTot
-}, 0);
-setTotal(sum)
-
-
-})
-
-
 
 
   return (
@@ -71,4 +53,4 @@ setTotal(sum)
   );
 }
 
-export default Basket;
+export default BasketContents;
