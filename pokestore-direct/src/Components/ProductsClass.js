@@ -44,7 +44,7 @@ class ProductsClass extends Component {
 
   rmvFrmBskt(name){
     this.state.basket = this.state.basket.filter(person => person.itemName != name)
-    this.setState({update:true})}
+    this.setState({update:true});}
 
   increment(name,items){
     let obj = this.state.basket.find(o => o.itemName === name);
@@ -55,11 +55,13 @@ class ProductsClass extends Component {
   }
 
   decrement(name,items){
-    let obj = this.state.basket.find(o => o.itemName === name);
+      let obj = this.state.basket.find(o => o.itemName === name);
     console.log(obj);
+    if(obj.quantity>1){
     --items
     obj.quantity=items
     this.setState({update:true})
+  }
   }
 
   addToBskt(name,price){
