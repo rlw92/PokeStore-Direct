@@ -8,6 +8,7 @@ class ProductsClass extends Component {
   constructor() {
     super();
     this.state = {
+      update: "",
       pokemons : [],
       pokemonDetails : [],
       offset: 0,
@@ -35,7 +36,8 @@ class ProductsClass extends Component {
     this.hideBasket=this.hideBasket.bind(this)
     this.addToBskt=this.addToBskt.bind(this)
     this.increment=this.increment.bind(this)
-    this.accum=this.accum.bind(this)
+    this.decrement=this.decrement.bind(this)
+
 
   }
 
@@ -48,9 +50,16 @@ class ProductsClass extends Component {
     console.log(obj);
     ++items
     obj.quantity=items
+    this.setState({update:true})
+  }
 
-    
-      }
+  decrement(name,items){
+    let obj = this.state.basket.find(o => o.itemName === name);
+    console.log(obj);
+    --items
+    obj.quantity=items
+    this.setState({update:true})
+  }
 
   addToBskt(name,price){
     const newList = this.state.basket.concat({
@@ -138,7 +147,7 @@ class ProductsClass extends Component {
       <a onClick={this.showBasket}>Basket({this.state.basket.length})</a>
       </div>
 
-    {this.state.shwBskt &&  <Basket basket={this.state.basket} func={this.hideBasket} inc={this.increment}/>}
+    {this.state.shwBskt &&  <Basket basket={this.state.basket} func={this.hideBasket} inc={this.increment} dec={this.decrement}/>}
 
       <div className="Header">
       <h1>Products</h1>
