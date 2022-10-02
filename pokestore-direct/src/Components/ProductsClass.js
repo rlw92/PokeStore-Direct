@@ -11,8 +11,10 @@ class ProductsClass extends Component {
       update: "",
       pokemons : [],
       pokemonDetails : [],
+      filter:"",
+      showItems: 6,
       offset: 0,
-      loadNumber:12,
+      loadNumber:300,
       shwBskt:false,
       itemName:"",
       price:"",
@@ -38,12 +40,45 @@ class ProductsClass extends Component {
     this.increment=this.increment.bind(this)
     this.decrement=this.decrement.bind(this)
     this.rmvFrmBskt=this.rmvFrmBskt.bind(this)
+    this.sortAZ=this.sortAZ.bind(this)
+    this.handleShowMore=this.handleShowMore.bind(this)
+    this.filterData=this.filterData.bind(this)
 
+  }
+
+filterData(event){
+  event.preventDefault();
+  this.setState({filter: event.target.value});
+
+  switch(event.target.value) {
+  case "AZ":
+    console.log("AZ")
+    this.setState({pokemonDetails:this.state.pokemonDetails.sort((a, b) => a.name.localeCompare(b.name))})
+    break;
+  case "ZA":
+    console.log("ZA")
+    break;
+    case "LH":
+      console.log("LH")
+      break;
+    case "HL":
+      console.log("HL")
+      break;
+      default:
+      console.log("default")
+
+}
+
+}
+
+  sortAZ(){
+    this.setState({pokemonDetails:this.state.pokemonDetails.sort((a, b) => a.name.localeCompare(b.name))})
+    console.log("HI")
 
   }
 
   rmvFrmBskt(name){
-    this.state.basket = this.state.basket.filter(person => person.itemName != name)
+    this.setState({basket:this.state.basket.filter(person => person.itemName != name)})
     this.setState({update:true});}
 
   increment(name,items){
@@ -109,6 +144,8 @@ else{
    return this.state.offset+this.state.loadNumber;
  }
 
+/*To use if you want to grab bits of json at a time change the load number
+ to something small and plug this into the load button*/
  handleMoreClick(event) {
    const newOffset = this.getNextOffset();
    this.setState({offset: newOffset}, () => {
@@ -117,6 +154,15 @@ else{
    });
 
  }
+
+/*The current one we are working on with the preloaded json*/
+ handleShowMore() {
+    this.setState({
+      showItems:
+        this.state.showItems >= this.state.pokemonDetails.length ?
+          this.state.showItems : this.state.showItems + 6
+    })
+  }
 
   componentDidMount() {
     this.getMorePokemon();
@@ -150,7 +196,7 @@ else{
   render() {
     const {pokemonDetails} = this.state;
 
-    const renderedPokemonList = pokemonDetails.map((pokemon, index) => {
+    const renderedPokemonList = pokemonDetails.slice(0, this.state.showItems).map((pokemon, index) => {
       return (<PokeCard pokemon={pokemon} func={this.addToBskt}/>);
     });
 
@@ -164,6 +210,8 @@ else{
       <a onClick={this.showBasket}>Basket({this.state.basket.length})</a>
       </div>
 
+
+
     {this.state.shwBskt &&  <Basket
       basket={this.state.basket}
       func={this.hideBasket}
@@ -175,7 +223,20 @@ else{
       <h1>Products</h1>
       </div>
 
+      <div className="filter">
+      Filter:<select value={this.state.filter} onChange={this.filterData}>
+      <option value="" disabled selected hidden>Choose Filter</option>
+        <option value="AZ">A-Z</option>
+        <option value="ZA">Z-A</option>
+        <option value="LH">Price:Low-High</option>
+        <option value="HL">Price:High-Low</option>
+      </select>
+
+  </div>
+
+
     <div className="centerbox">
+
       <div className="maincontent">
 
           {renderedPokemonList}
@@ -187,7 +248,7 @@ else{
 
       </div>
 
-<button type="button" className="load" onClick={this.handleMoreClick}>Load More</button>
+<button type="button" className="load" onClick={this.handleShowMore}>Load More</button>
 
       </div>
     );
