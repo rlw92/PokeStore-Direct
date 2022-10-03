@@ -18,6 +18,7 @@ class ProductsClass extends Component {
       shwBskt:false,
       itemName:"",
       price:"",
+      query:"",
       basket:[
         {
           itemName:"Hat",
@@ -40,11 +41,17 @@ class ProductsClass extends Component {
     this.increment=this.increment.bind(this)
     this.decrement=this.decrement.bind(this)
     this.rmvFrmBskt=this.rmvFrmBskt.bind(this)
-    this.sortAZ=this.sortAZ.bind(this)
     this.handleShowMore=this.handleShowMore.bind(this)
     this.filterData=this.filterData.bind(this)
+    this.search=this.search.bind(this)
 
   }
+
+
+search(event){
+  this.setState({query: event.target.value})
+
+}
 
 filterData(event){
   event.preventDefault();
@@ -57,12 +64,17 @@ filterData(event){
     break;
   case "ZA":
     console.log("ZA")
+    //Either functions below will work
+    //this.setState({pokemonDetails:this.state.pokemonDetails.sort((z, y) => y.name.localeCompare(z.name))})
+    this.setState({pokemonDetails:this.state.pokemonDetails.sort((a, b) => a.name.localeCompare(b.name)).reverse()})
     break;
     case "LH":
       console.log("LH")
+      this.setState({pokemonDetails:this.state.pokemonDetails.sort(function(a, b){return a.cost-b.cost})});
       break;
     case "HL":
       console.log("HL")
+    this.setState({pokemonDetails:this.state.pokemonDetails.sort(function(a, b){return b.cost-a.cost})});
       break;
       default:
       console.log("default")
@@ -71,11 +83,6 @@ filterData(event){
 
 }
 
-  sortAZ(){
-    this.setState({pokemonDetails:this.state.pokemonDetails.sort((a, b) => a.name.localeCompare(b.name))})
-    console.log("HI")
-
-  }
 
   rmvFrmBskt(name){
     this.setState({basket:this.state.basket.filter(person => person.itemName != name)})
@@ -196,7 +203,13 @@ else{
   render() {
     const {pokemonDetails} = this.state;
 
-    const renderedPokemonList = pokemonDetails.slice(0, this.state.showItems).map((pokemon, index) => {
+    const renderedPokemonList = pokemonDetails.filter(post => {
+    if (this.state.query === '') {
+      return post;
+    } else if (post.name.toLowerCase().includes(this.state.query.toLowerCase())) {
+      return post;
+    }
+  }).slice(0, this.state.showItems).map((pokemon, index) => {
       return (<PokeCard pokemon={pokemon} func={this.addToBskt}/>);
     });
 
@@ -231,6 +244,8 @@ else{
         <option value="LH">Price:Low-High</option>
         <option value="HL">Price:High-Low</option>
       </select>
+
+      <input type="text" className="input" placeholder="search..." onChange={this.search}/>
 
   </div>
 
