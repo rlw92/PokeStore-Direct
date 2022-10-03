@@ -5,7 +5,7 @@ import ProductsClass from './Components/ProductsClass'
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter basename='/app/'>
+    <BrowserRouter basename='/pokestore-direct'>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/products" element={<ProductsClass />} />
