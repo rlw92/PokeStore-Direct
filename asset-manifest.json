@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/PokeStore-Direct/static/css/main.b6500264.css",
-    "main.js": "/PokeStore-Direct/static/js/main.ba47ef0d.js",
+    "main.js": "/PokeStore-Direct/static/js/main.429d1ea4.js",
     "static/js/787.89c66f7a.chunk.js": "/PokeStore-Direct/static/js/787.89c66f7a.chunk.js",
     "static/media/Mart.png": "/PokeStore-Direct/static/media/Mart.971c173072da75b0ff01.png",
     "static/media/PocketMonk.ttf": "/PokeStore-Direct/static/media/PocketMonk.09d09837f1b6dec50403.ttf",
     "index.html": "/PokeStore-Direct/index.html",
     "main.b6500264.css.map": "/PokeStore-Direct/static/css/main.b6500264.css.map",
-    "main.ba47ef0d.js.map": "/PokeStore-Direct/static/js/main.ba47ef0d.js.map",
+    "main.429d1ea4.js.map": "/PokeStore-Direct/static/js/main.429d1ea4.js.map",
     "787.89c66f7a.chunk.js.map": "/PokeStore-Direct/static/js/787.89c66f7a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6500264.css",
-    "static/js/main.ba47ef0d.js"
+    "static/js/main.429d1ea4.js"
   ]
 }
