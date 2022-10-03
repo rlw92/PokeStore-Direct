@@ -1,5 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
+import {Link} from 'react-router-dom';
 import "../App.css"
 import PokeCard from './PokeCard'
 import Basket from './Basket'
@@ -207,8 +208,8 @@ else{
       <div>
 
       <div className="navbar">
-      <a href="/">Homepage</a>
-      <a href="/products">Products</a>
+      <Link to="/">Homepage</Link>
+      <a>Products</a>
       <a onClick={this.showBasket}>Basket({this.state.basket.length})</a>
       </div>
 
