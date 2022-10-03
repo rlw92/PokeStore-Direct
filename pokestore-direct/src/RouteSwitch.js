@@ -5,7 +5,7 @@ import ProductsClass from './Components/ProductsClass'
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/app/'>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/products" element={<ProductsClass />} />
