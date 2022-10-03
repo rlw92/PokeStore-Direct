@@ -85,6 +85,7 @@
     text-align:center;
   }
 
+
   .centerbox{display:flex; justify-content:center;margin:0;}
 
   .name{font-family:Lato;}
@@ -133,3 +134,12 @@
 .filter{display:flex;
   justify-content: center;
   gap:6px;}
+
+  .footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: yellow;
+    color: red;
+  text-align: center;
+}

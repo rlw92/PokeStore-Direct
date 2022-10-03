@@ -8,8 +8,7 @@ function Homepage() {
     <div className="navbar">
     <a>Homepage</a>
     <a href="/products">Products</a>
-    <a>Basket</a>
-    </div>
+        </div>
 
     <div className="Header">
     <h1>PokeStore-Direct</h1>
@@ -26,12 +25,19 @@ function Homepage() {
     local PokeMart delivered directly to you!
     <br />Wherever you are in the Kanto region!
     <br />
-    Simply click onto our products page, add the desired items to your basket and enter your location and details at the checkout.
+    Simply click onto our products page,choose from a wide selection of over 200 items sourced from local distributors,
+     add the desired products to your basket and then enter your location and details at the checkout.
+     <br />
+     Within 24 hours our dedicated team of cyclists will deliver your basket to you, fresh and ready to use.
     </div>
    <br />
    <div className="martImage">
    <img src={image}></img>
    </div>
+
+
+   <footer className="footer">
+   PokeStoreDirect made with the PokeAPI for The Odin Project</footer>
 
 
     </div>

@@ -19,18 +19,7 @@ class ProductsClass extends Component {
       itemName:"",
       price:"",
       query:"",
-      basket:[
-        {
-          itemName:"Hat",
-          price:"70",
-          quantity:1
-        },
-        {
-          itemName:"Shoes",
-          price:"60",
-          quantity:1
-        }
-      ]
+      basket:[]
 
     }
 

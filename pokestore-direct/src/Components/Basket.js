@@ -35,12 +35,14 @@ setTotal(sum)
 
         <div className="modal-content">
         <span className="close" onClick={func}>&times;</span>
-        <h2>Basket</h2>
+        <h2 className="name">Basket</h2>
         <div>
-        <ul>
+         <ul>
         {basket.map((items) => (
 
-        <li>
+
+
+       <li>
         <p>
         <strong>Name</strong>:&nbsp;<span>{items.itemName}</span>{' '}
         <strong>Price</strong>:&nbsp;<span>${items.price}</span>{' '}
@@ -59,9 +61,12 @@ setTotal(sum)
 
 
 
+
+
         ))}
 
         </ul>
+        
 </div>
 <p><strong>Total</strong>:&nbsp;${total}</p>
 <button>Go To Checkout</button>
