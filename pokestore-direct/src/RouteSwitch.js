@@ -1,18 +1,18 @@
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Homepage from "./Components/Homepage";
 import ProductsClass from './Components/ProductsClass'
 
 const RouteSwitch = () => {
   return (
-    <HashRouter>
+    <BrowserRouter basename='/pokestore-direct'>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/products" element={<ProductsClass />} />
+        <Route path="/pokestore-direct/products" element={<ProductsClass />} />
 
 
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
