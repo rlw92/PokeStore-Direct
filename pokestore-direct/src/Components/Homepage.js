@@ -1,4 +1,5 @@
 import '../App.css';
+import {Link} from 'react-router-dom';
 import image from "../Assets/Mart.png"
 
 function Homepage() {
@@ -7,7 +8,7 @@ function Homepage() {
 
     <div className="navbar">
     <a>Homepage</a>
-    <a href="/products">Products</a>
+    <Link to="/products">Products</Link>
         </div>
 
     <div className="Header">
