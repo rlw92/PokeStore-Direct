@@ -1,5 +1,37 @@
 # PokeStore-Direct
-A mock website created for the ReactJS portion of the Odin Project website.
+
+Created for the React Javascript portion of the Odin Project.
+Website built using ReactJS and the PokeAPI.
+Live Demo ---> https://rlw92.github.io/PokeStore-Direct/
+
+
+**19.11.22 Planned Updates**
+
+This is one of the projects I plan on using for my portfolio so I will be implementing some
+updates to polish it up:
+
+Homepage:
+1. On the homepage the building image scrolls over in mobile view.
+2. Add some nice background color or styling to the homepage text portion
+3. On the navbar the homepage button lights up when on hover without a cursor
+
+Products page:
+4. In mobile the product boxes squish together, implement grid design
+5. Same issue as 3 above. Fix navbar basically.
+
+Checkout:
+6. When user clicks checkout I want there to be a form for them to fill in
+location details along with a rundown of their Products
+7. Once a user has entered this info then we should get an animation
+of the pokemon blue/red era bicycle travelling.
+8. The user will then have the option to press a button and return to the homepage.
+
+
+
+:::::::::::::::::::::::::::::::::::
+
+
+**Starting Notes:**
 
 This project will showcase my ability to create a  multi-page application using ReactJs and to access data using an API.
 
