@@ -1,7 +1,9 @@
 # PokeStore-Direct
 
 Created for the React Javascript portion of the Odin Project.
+
 Website built using ReactJS and the PokeAPI.
+
 Live Demo ---> https://rlw92.github.io/PokeStore-Direct/
 
 
