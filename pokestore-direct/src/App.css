@@ -10,7 +10,7 @@
        color:red;
       margin:20px;}
 
-  .martImage{margin-left:25%;width:30%;}
+  .martImage{display:flex;justify-content: center;}
 
 .load{width:100%;
   background-color: #4CAF50; /* Green */
