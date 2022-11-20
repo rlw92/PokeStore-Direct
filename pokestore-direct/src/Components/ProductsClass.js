@@ -13,7 +13,7 @@ class ProductsClass extends Component {
       pokemons : [],
       pokemonDetails : [],
       filter:"",
-      showItems: 6,
+      showItems: 8,
       offset: 0,
       loadNumber:300,
       shwBskt:false,
@@ -157,7 +157,7 @@ else{
     this.setState({
       showItems:
         this.state.showItems >= this.state.pokemonDetails.length ?
-          this.state.showItems : this.state.showItems + 6
+          this.state.showItems : this.state.showItems + 8
     })
   }
 
