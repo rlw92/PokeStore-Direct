@@ -1,5 +1,6 @@
 import '../App.css';
 import {useState, useEffect} from "react";
+import Checkout from "./Checkout"
 
 
 
@@ -7,6 +8,7 @@ function Basket( { func, basket, inc, dec, rmv }) {
   const[total,setTotal]=useState("")
   const[accTot,setAcc]=useState([])
   const[update,setUpdate]=useState("")
+  const[checkout,setcheckout]=useState(false)
 
 
 
@@ -23,6 +25,8 @@ setTotal(sum)
 
 
 })
+
+const showCheckout = ()=>{setcheckout(checkout => !checkout)}
 
 
 
@@ -66,12 +70,16 @@ setTotal(sum)
         ))}
 
         </ul>
-        
+
 </div>
 <p><strong>Total</strong>:&nbsp;${total}</p>
-<button>Go To Checkout</button>
-      </div>
+<button onClick={showCheckout}>Go To Checkout</button>
 
+      </div>
+      {checkout &&  <Checkout
+                      basket = {basket}
+                      total = {total}
+                      func={showCheckout}/>}
     </div>
 
 

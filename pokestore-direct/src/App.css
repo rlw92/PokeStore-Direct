@@ -130,6 +130,8 @@
   cursor: pointer;
 }
 
+#checkoutmodal{z-index:2;}
+
 .filter{display:flex;
   justify-content: center;
   gap:6px;}
@@ -142,3 +144,20 @@
     color: red;
   text-align: center;
 }
+.bikanim{display:none;
+  text-align:center;
+  flex-direction: column;
+         justify-content:center;
+         align-items: center;
+          }
+.bikanim img{width:20%;}
+.bikanim button{background-color: red ;
+  border: yellow solid 2px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;}
+
+  .bikanim a{color:white;}
