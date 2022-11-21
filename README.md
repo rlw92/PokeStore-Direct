@@ -7,6 +7,9 @@ Website built using ReactJS and the PokeAPI.
 Live Demo ---> https://rlw92.github.io/PokeStore-Direct/
 
 
+pokemon bike gif by xAVENG3Rx --> https://tenor.com/en-GB/view/pokemon-bike-gif-9397517
+
+
 **19.11.22 Planned Updates**
 
 This is one of the projects I plan on using for my portfolio so I will be implementing some
